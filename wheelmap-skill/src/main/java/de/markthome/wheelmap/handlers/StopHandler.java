@@ -36,7 +36,7 @@ public class StopHandler implements IntentRequestHandler {
     public Optional<Response> handle(HandlerInput handlerInput, IntentRequest intentRequest) {
         final ResourceBundle messages = SkillUtils.getResourceBundle(handlerInput, "Messages");
         return handlerInput.getResponseBuilder()
-                .withSpeech(messages.getString("STOP"))
+                .withSpeech(messages.getString("speech.info.stop"))
                 .build();
     }
 }

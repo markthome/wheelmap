@@ -32,7 +32,7 @@ public class AboutIntentHandler implements IntentRequestHandler {
     @Override
     public Optional<Response> handle(HandlerInput handlerInput, IntentRequest intentRequest) {
         return handlerInput.getResponseBuilder()
-                .withSpeech(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("ABOUT"))
+                .withSpeech(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("speech.info.about"))
                 .build();
     }
 }

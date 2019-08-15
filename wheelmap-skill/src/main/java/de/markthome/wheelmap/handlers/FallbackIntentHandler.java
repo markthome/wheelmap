@@ -34,8 +34,8 @@ public class FallbackIntentHandler implements IntentRequestHandler {
     public Optional<Response> handle(HandlerInput handlerInput, IntentRequest intentRequest) {
         final ResourceBundle messages = SkillUtils.getResourceBundle(handlerInput, "Messages");
         return handlerInput.getResponseBuilder()
-                .withSpeech(messages.getString("FALLBACK_MESSAGE"))
-                .withReprompt(messages.getString("FALLBACK_PROMPT"))
+                .withSpeech(messages.getString("speech.info.fallback-message"))
+                .withReprompt(messages.getString("speech.info.fallback-prompt"))
                 .build();
     }
 }

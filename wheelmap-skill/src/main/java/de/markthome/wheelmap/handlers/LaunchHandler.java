@@ -33,7 +33,7 @@ public class LaunchHandler implements LaunchRequestHandler {
     @Override
     public Optional<Response> handle(HandlerInput handlerInput, LaunchRequest launchRequest) {
         final ResourceBundle messages = SkillUtils.getResourceBundle(handlerInput, "Messages");
-        final String speechText = String.format("%s %s", messages.getString("WELCOME"), messages.getString("HELP"));
+        final String speechText = String.format("%s %s", messages.getString("speech.info.welcome"), messages.getString("speech.info.help"));
         return handlerInput.getResponseBuilder()
                 .withSpeech(speechText)
                 .withReprompt(speechText)

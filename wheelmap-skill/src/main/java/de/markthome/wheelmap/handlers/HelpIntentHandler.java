@@ -31,7 +31,7 @@ public class HelpIntentHandler implements IntentRequestHandler {
 
     @Override
     public Optional<Response> handle(HandlerInput handlerInput, IntentRequest intentRequest) {
-        final String speechText = SkillUtils.getResourceBundle(handlerInput, "Messages").getString("HELP");
+        final String speechText = SkillUtils.getResourceBundle(handlerInput, "Messages").getString("speech.info.help");
         return handlerInput.getResponseBuilder()
                 .withSpeech(speechText)
                 .withReprompt(speechText)

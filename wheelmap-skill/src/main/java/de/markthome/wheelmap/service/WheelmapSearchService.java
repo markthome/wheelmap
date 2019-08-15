@@ -3,7 +3,6 @@
  */
 package de.markthome.wheelmap.service;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
