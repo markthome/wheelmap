@@ -1,0 +1,114 @@
+{
+	"version": "1.0",
+	"session": {
+		"new": false,
+		"sessionId": "amzn1.echo-api.session.5d0e2c54-4faa-4833-91e0-aa87a4d411dd",
+		"application": {
+			"applicationId": "amzn1.ask.skill.d629a705-0afd-4e02-b044-f3dc4a5d6031"
+		},
+		"user": {
+			"userId": "amzn1.ask.account.AEKAQB7BXDMF477ZQJGEXL6RZ7N6MMHXRIX7ER3LKEBTRVHOFFWIBKY7AEI77ZN6R3LOVQAJYFEZIYSRV6WLFGHIRIHVWK45FFDWHFBK5FLYGA73BQEM25V2T5O3QDC2SNGCX3EWR4GVKZKASMLUS4INWPIXQFJMQZWX362BW7H2N6UFERJQEI3RLKIQI7WC4RWQA4JJGSVXOUY"
+		}
+	},
+	"context": {
+		"System": {
+			"application": {
+				"applicationId": "amzn1.ask.skill.d629a705-0afd-4e02-b044-f3dc4a5d6031"
+			},
+			"user": {
+				"userId": "amzn1.ask.account.AEKAQB7BXDMF477ZQJGEXL6RZ7N6MMHXRIX7ER3LKEBTRVHOFFWIBKY7AEI77ZN6R3LOVQAJYFEZIYSRV6WLFGHIRIHVWK45FFDWHFBK5FLYGA73BQEM25V2T5O3QDC2SNGCX3EWR4GVKZKASMLUS4INWPIXQFJMQZWX362BW7H2N6UFERJQEI3RLKIQI7WC4RWQA4JJGSVXOUY"
+			},
+			"device": {
+				"deviceId": "amzn1.ask.device.AEYDRDSCVDSQGVKKSDNNOEPT36VQNAO7JBDHJNB7RNVXO2UPWFGKVMQBAG5QRNF4BZOOKFTWFSDAP6AUZQFWIEAO6TXHK2GXEFGDTY43C4EWYHYU4Y4W4Q5N4UXRCMSDSS56ARJOTQ7S6ZHS3GA6Q4232NLBKD26W3OAPLMONED2H5NINXKMG",
+				"supportedInterfaces": {}
+			},
+			"apiEndpoint": "https://api.eu.amazonalexa.com",
+			"apiAccessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLmQ2MjlhNzA1LTBhZmQtNGUwMi1iMDQ0LWYzZGM0YTVkNjAzMSIsImV4cCI6MTU3MjYxNjQ1OCwiaWF0IjoxNTcyNjE2MTU4LCJuYmYiOjE1NzI2MTYxNTgsInByaXZhdGVDbGFpbXMiOnsiY29udGV4dCI6IkFBQUFBQUFBQVFDeXhVZ0VhUmdXK0tlVXdCQ0pFOFYxS3dFQUFBQUFBQUJFS0Vrdnd0QXFNc0wyTFB5NThYY1RxVkZ3QkxUdGFkSXhWRnBWWDA4WStCRHFMZmlTU0ZURkxSNzhPd3AzWW1KbDAyV2I5RG9uZGxBZFE0VHZGZEVVMkczYTl0NGxXVUEyRWppOHYvTmVFaWNXTVo1d3JmVUtqY0FaTGMzdWlsdVNaNEtYOHZCMGdKRkxRd3p4OEFaK25RblkzQmVMV2pNeTVIOUs3dmx1T1hwTlRUV2tNeHNrVW5OdVRsbG1iSURzbW4rUHozOHZieTJ1b2FIVGJqQVhuTEFrWEgzelljRTNReThEdjlyTkFLNjcwY3Q1Z0JDMm90UDBxZlk5ZGVtdnZ6VjNGM3dhdzE4VlkvODI0VFNkRGlHVTV3MUZCNFZTZ3phUitGTDZiTFhlUTlPc2lQTW9oaGZEZGRaS3VxM2VDTklBemZuR1FEb0VRY3NYaUZIZGE4L2ltdXJYamVmRldOSG51K3R4bmIydW9JNDU5K2hod2ZsTGhUL0tmRDkxVkZaMkVTK2YwcW1wZHc9PSIsImNvbnNlbnRUb2tlbiI6bnVsbCwiZGV2aWNlSWQiOiJhbXpuMS5hc2suZGV2aWNlLkFFWURSRFNDVkRTUUdWS0tTRE5OT0VQVDM2VlFOQU83SkJESEpOQjdSTlZYTzJVUFdGR0tWTVFCQUc1UVJORjRCWk9PS0ZUV0ZTREFQNkFVWlFGV0lFQU82VFhISzJHWEVGR0RUWTQzQzRFV1lIWVU0WTRXNFE1TjRVWFJDTVNEU1M1NkFSSk9UUTdTNlpIUzNHQTZRNDIzMk5MQktEMjZXM09BUExNT05FRDJINU5JTlhLTUciLCJ1c2VySWQiOiJhbXpuMS5hc2suYWNjb3VudC5BRUtBUUI3QlhETUY0NzdaUUpHRVhMNlJaN042TU1IWFJJWDdFUjNMS0VCVFJWSE9GRldJQktZN0FFSTc3Wk42UjNMT1ZRQUpZRkVaSVlTUlY2V0xGR0hJUklIVldLNDVGRkRXSEZCSzVGTFlHQTczQlFFTTI1VjJUNU8zUURDMlNOR0NYM0VXUjRHVktaS0FTTUxVUzRJTldQSVhRRkpNUVpXWDM2MkJXN0gyTjZVRkVSSlFFSTNSTEtJUUk3V0M0UldRQTRKSkdTVlhPVVkifX0.En5NLwqzaHmppZaVS7ypwClGfB9mQ2_RScg9wI7L0tZlfPxN5sUhkS5BBeMz9sThKPa2DyEjNgz4kn8SguIOXUMREFJu-XCPQ_bo1QoZ1n1q0toW24I4xJgq9HgsPntYlOFn5CC74zEItJjr-QQzAtwAbM9nhq4MG55c1peLnDdKdJ1FQNi3ZYcGGXElbkVoAAygPRQ41BCrfW00vaQjCqWrVEmLkUWwuX744F2cykWqlATv0mukmDM7j2zhCM2lQDW9AeuOVX2wbtXpSNQDpwJteUZJ0hbbMQzVcdv_OzNKjAZRTOgD12-FQql-Vw9QCOKfOKJ9kmovxlM_Rnhv5w"
+		},
+		"Viewport": {
+			"experiences": [
+				{
+					"arcMinuteWidth": 246,
+					"arcMinuteHeight": 144,
+					"canRotate": false,
+					"canResize": false
+				}
+			],
+			"shape": "RECTANGLE",
+			"pixelWidth": 1024,
+			"pixelHeight": 600,
+			"dpi": 160,
+			"currentPixelWidth": 1024,
+			"currentPixelHeight": 600,
+			"touch": [
+				"SINGLE"
+			],
+			"video": {
+				"codecs": [
+					"H_264_42",
+					"H_264_41"
+				]
+			}
+		},
+		"Viewports": [
+			{
+				"type": "APL",
+				"id": "main",
+				"shape": "RECTANGLE",
+				"dpi": 160,
+				"presentationType": "STANDARD",
+				"canRotate": false,
+				"configuration": {
+					"current": {
+						"video": {
+							"codecs": [
+								"H_264_42",
+								"H_264_41"
+							]
+						},
+						"size": {
+							"type": "DISCRETE",
+							"pixelWidth": 1024,
+							"pixelHeight": 600
+						}
+					}
+				}
+			}
+		]
+	},
+	"request": {
+		"type": "IntentRequest",
+		"requestId": "amzn1.echo-api.request.08517d7d-a440-4382-9916-3a24b6797ddb",
+		"timestamp": "2019-11-01T13:49:18Z",
+		"locale": "de-DE",
+		"intent": {
+			"name": "AccessibilityIntent",
+			"confirmationStatus": "NONE",
+			"slots": {
+				"country": {
+					"name": "country",
+					"confirmationStatus": "NONE",
+					"source": "USER"
+				},
+				"housenumber": {
+					"name": "housenumber",
+					"confirmationStatus": "NONE",
+					"source": "USER"
+				},
+				"city": {
+					"name": "city",
+					"value": "51 detmold",
+					"confirmationStatus": "NONE",
+					"source": "USER"
+				},
+				"street": {
+					"name": "street",
+					"value": "krumme straße",
+					"confirmationStatus": "NONE",
+					"source": "USER"
+				}
+			}
+		},
+		"dialogState": "COMPLETED"
+	}
+}

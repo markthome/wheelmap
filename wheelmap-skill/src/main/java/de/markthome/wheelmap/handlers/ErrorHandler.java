@@ -30,7 +30,7 @@ public class ErrorHandler implements RequestHandler {
 
     @Override
     public Optional<Response> handle(HandlerInput handlerInput) {
-        final String speechOutput = SkillUtils.getResourceBundle(handlerInput, "Messages").getString("ERROR_SPEECH");
+        final String speechOutput = SkillUtils.getResourceBundle(handlerInput, "Messages").getString("speech.info.fallback-message");
         return handlerInput.getResponseBuilder()
                 .withSpeech(speechOutput)
                 .withReprompt(speechOutput)

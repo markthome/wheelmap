@@ -1,0 +1,169 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "wheelsmap",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "Was kann ich fragen"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AccessibilityIntent",
+                    "slots": [
+                        {
+                            "name": "street",
+                            "type": "AMAZON.StreetName",
+                            "samples": [
+                                "Ich meine {street}",
+                                "{street}",
+                                "Die Straße lautet {street}"
+                            ]
+                        },
+                        {
+                            "name": "city",
+                            "type": "AMAZON.City",
+                            "samples": [
+                                "Ich meine {city}",
+                                "{city}"
+                            ]
+                        },
+                        {
+                            "name": "country",
+                            "type": "AMAZON.Country"
+                        },
+                        {
+                            "name": "housenumber",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{housenumber}",
+                                "Ich meine Hausnummer {housenumber} "
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Ist {street} {housenumber} in {city} barrierefrei",
+                        "Ist {street} {housenumber} barrierefrei",
+                        "barrierefrei",
+                        "Ist {street} in {city} barriefrei",
+                        "Ist barriefrei",
+                        "Ist {street} in {city} in {country} barriefrei"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "AccessibilityIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "street",
+                            "type": "AMAZON.StreetName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1531086067580.65661434568"
+                            }
+                        },
+                        {
+                            "name": "city",
+                            "type": "AMAZON.City",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1531086067580.1113039550340"
+                            }
+                        },
+                        {
+                            "name": "country",
+                            "type": "AMAZON.Country",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "housenumber",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1027078669470.898547423607"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1531086067580.65661434568",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Straße"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Welche Straße meinst du"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Wie lautet die Straße"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1531086067580.1113039550340",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Welche Stadt"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Welche Stadt meinst du"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1027078669470.898547423607",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Welche Hausnummer"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Hausnummer"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Welche Hausnummer meinst du"
+                    }
+                ]
+            }
+        ]
+    }
+}

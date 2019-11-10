@@ -5,6 +5,7 @@ import com.amazon.ask.SkillStreamHandler;
 import com.amazon.ask.Skills;
 
 import de.markthome.wheelmap.handlers.AboutIntentHandler;
+import de.markthome.wheelmap.handlers.AccessibilityHandler;
 import de.markthome.wheelmap.handlers.ErrorHandler;
 import de.markthome.wheelmap.handlers.FallbackIntentHandler;
 import de.markthome.wheelmap.handlers.HelpIntentHandler;
@@ -23,10 +24,10 @@ public class WheelmapStreamHandler extends SkillStreamHandler {
                         new HelpIntentHandler(),
                         new LaunchHandler(),
                         new SessionEndedHandler(),
+                        new AccessibilityHandler(),
                         new ErrorHandler()
                 )
-                // Add your skill id below
-                // .withSkillId("") // TODO
+                .withSkillId("amzn1.ask.skill.d629a705-0afd-4e02-b044-f3dc4a5d6031")
                 .build();
     }
 
