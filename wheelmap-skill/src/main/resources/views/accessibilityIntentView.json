@@ -153,11 +153,18 @@
                         "paddingBottom": "@marginBottom",
                         "items": [
                             {
-                                "type": "Text",
-                                "text": "${payload.bodyTemplate1Data.textContent.primaryText.text}",
-                                "fontSize": "@textSizeBody",
-                                "spacing": "@spacingSmall",
-                                "style": "textStyleBody"
+                                "type": "ScrollView",
+                                "height": "200dp",
+                                "width": "300dp",
+                                "item": [
+                                    {
+                                        "type": "Text",
+                                        "text": "${payload.bodyTemplate1Data.textContent.primaryText.text}",
+                                        "fontSize": "@textSizeBody",
+                                        "spacing": "@spacingSmall",
+                                        "style": "textStyleBody"
+                                    }
+                                ]
                             }
                         ]
                     }
