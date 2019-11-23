@@ -26,7 +26,7 @@
         {
             "description": "Standard font sizes",
             "dimensions": {
-                "textSizeBody": 48,
+                "textSizeBody": 56,
                 "textSizePrimary": 27,
                 "textSizeSecondary": 23,
                 "textSizeSecondaryHint": 25
@@ -122,6 +122,7 @@
     "commands": {},
     "layouts": {},
     "mainTemplate": {
+        "description": "********* Full-screen background image **********",
         "parameters": [
             "payload"
         ],
@@ -130,75 +131,33 @@
                 "when": "${viewport.shape == 'round'}",
                 "type": "Container",
                 "direction": "column",
-                "width": "100vw",
-                "height": "100vh",
                 "items": [
                     {
                         "type": "Image",
-                        "source": "${payload.bodyTemplate3Data.image.sources[0].url}",
-                        "scale": "best-fill",
+                        "source": "${payload.bodyTemplate1Data.backgroundImage.sources[0].url}",
+                        "position": "absolute",
                         "width": "100vw",
                         "height": "100vh",
-                        "position": "absolute",
-                        "overlayColor": "rgba(0, 0, 0, 0.6)"
+                        "scale": "best-fill"
                     },
                     {
-                        "type": "ScrollView",
-                        "width": "100vw",
-                        "height": "100vh",
-                        "item": [
+                        "type": "AlexaHeader",
+                        "headerTitle": "${payload.bodyTemplate1Data.title}",
+                        "headerAttributionImage": "${payload.bodyTemplate1Data.logoUrl}"
+                    },
+                    {
+                        "type": "Container",
+                        "grow": 1,
+                        "paddingLeft": "@marginLeft",
+                        "paddingRight": "@marginRight",
+                        "paddingBottom": "@marginBottom",
+                        "items": [
                             {
-                                "type": "Container",
-                                "direction": "column",
-                                "alignItems": "center",
-                                "paddingLeft": 30,
-                                "paddingRight": 30,
-                                "paddingBottom": 200,
-                                "items": [
-                                    {
-                                        "type": "AlexaHeader",
-                                        "headerAttributionImage": "${payload.bodyTemplate3Data.logoUrl}",
-                                        "headerTitle": "${payload.bodyTemplate3Data.title}"
-                                    },
-                                    {
-                                        "type": "Text",
-                                        "text": "<b>Food pairings</b> | <b>Wine pairings</b>",
-                                        "style": "textStylePrimary",
-                                        "color": "#4dd2ff",
-                                        "width": "90vw",
-                                        "textAlign": "center"
-                                    },
-                                    {
-                                        "type": "Text",
-                                        "text": "<b>${payload.bodyTemplate3Data.textContent.title.text}</b>",
-                                        "style": "textStyleBody",
-                                        "width": "90vw",
-                                        "textAlign": "center"
-                                    },
-                                    {
-                                        "type": "Text",
-                                        "text": "${payload.bodyTemplate3Data.textContent.subtitle.text}",
-                                        "style": "textStylePrimary",
-                                        "width": "90vw",
-                                        "textAlign": "center"
-                                    },
-                                    {
-                                        "type": "Text",
-                                        "text": "${payload.bodyTemplate3Data.textContent.primaryText.text}",
-                                        "paddingTop": 40,
-                                        "style": "textStylePrimary",
-                                        "width": "90vw",
-                                        "textAlign": "center"
-                                    },
-                                    {
-                                        "type": "Text",
-                                        "text": "${payload.bodyTemplate3Data.textContent.bulletPoint.text}",
-                                        "paddingTop": 50,
-                                        "style": "textStylePrimary",
-                                        "width": "90vw",
-                                        "textAlign": "center"
-                                    }
-                                ]
+                                "type": "Text",
+                                "text": "${payload.bodyTemplate1Data.textContent.primaryText.text}",
+                                "fontSize": "@textSizeBody",
+                                "spacing": "@spacingSmall",
+                                "style": "textStyleBody"
                             }
                         ]
                     }
@@ -206,76 +165,33 @@
             },
             {
                 "type": "Container",
-                "width": "100vw",
                 "height": "100vh",
                 "items": [
                     {
                         "type": "Image",
-                        "source": "${payload.bodyTemplate3Data.backgroundImage.sources[0].url}",
-                        "scale": "best-fill",
+                        "source": "${payload.bodyTemplate1Data.backgroundImage.sources[0].url}",
+                        "position": "absolute",
                         "width": "100vw",
                         "height": "100vh",
-                        "position": "absolute"
+                        "scale": "best-fill"
                     },
                     {
                         "type": "AlexaHeader",
-                        "headerTitle": "${payload.bodyTemplate3Data.title}",
-                        "headerAttributionImage": "${payload.bodyTemplate3Data.logoUrl}"
+                        "headerTitle": "${payload.bodyTemplate1Data.title}",
+                        "headerAttributionImage": "${payload.bodyTemplate1Data.logoUrl}"
                     },
                     {
                         "type": "Container",
-                        "direction": "row",
-                        "paddingLeft": 40,
-                        "paddingRight": 72,
-                        "grow": 1,
+                        "paddingLeft": "@marginLeft",
+                        "paddingRight": "@marginRight",
+                        "paddingBottom": "@marginBottom",
                         "items": [
                             {
-                                "type": "Image",
-                                "source": "${payload.bodyTemplate3Data.image.sources[0].url}",
-                                "width": "35vw",
-                                "height": "65vh",
-                                "scale": "best-fit",
-                                "align": "center"
-                            },
-                            {
-                                "type": "ScrollView",
-                                "height": "60vh",
-                                "shrink": 1,
-                                "item": [
-                                    {
-                                        "type": "Container",
-                                        "items": [
-                                            {
-                                                "type": "Text",
-                                                "text": "<b>Food pairings</b> | <b>Wine pairings</b>",
-                                                "style": "textStylePrimary",
-                                                "color": "#4dd2ff"
-                                            },
-                                            {
-                                                "type": "Text",
-                                                "text": "<b>${payload.bodyTemplate3Data.textContent.title.text}</b>",
-                                                "style": "textStyleBody"
-                                            },
-                                            {
-                                                "type": "Text",
-                                                "text": "${payload.bodyTemplate3Data.textContent.subtitle.text}",
-                                                "style": "textStylePrimary"
-                                            },
-                                            {
-                                                "type": "Text",
-                                                "text": "${payload.bodyTemplate3Data.textContent.primaryText.text}",
-                                                "paddingTop": 40,
-                                                "style": "textStylePrimary"
-                                            },
-                                            {
-                                                "type": "Text",
-                                                "text": "${payload.bodyTemplate3Data.textContent.bulletPoint.text}",
-                                                "paddingTop": 50,
-                                                "style": "textStylePrimary"
-                                            }
-                                        ]
-                                    }
-                                ]
+                                "type": "Text",
+                                "text": "${payload.bodyTemplate1Data.textContent.primaryText.text}",
+                                "fontSize": "@textSizeBody",
+                                "spacing": "@spacingSmall",
+                                "style": "textStyleBody"
                             }
                         ]
                     }

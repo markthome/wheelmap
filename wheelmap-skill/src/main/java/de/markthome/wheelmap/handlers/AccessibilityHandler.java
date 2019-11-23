@@ -61,6 +61,13 @@ public class AccessibilityHandler implements IntentRequestHandler {
     		
     		try {
     			RequestHelper requestHelper = RequestHelper.forHandlerInput(handlerInput);
+    			
+    			
+    			// Check for APL support on the user's device
+    			boolean supportsApl = false;
+    	        if (requestHelper.getSupportedInterfaces().getAlexaPresentationAPL() != null) {
+    	        		supportsApl = true;
+    	        }
       
     			// Use a helper method to get the slot value wrapped in an Optional.
 		    Optional<String> street = requestHelper.getSlotValue("street");
@@ -103,41 +110,66 @@ public class AccessibilityHandler implements IntentRequestHandler {
 					// Lookup wheel map data
 					WheelmapSearchResponse wheelmapSearchResponse = WheelmapSearchService.getInstance().getSearchResponse(hereTopLeft.getLongitude(), hereTopLeft.getLatitude(), hereBottomRight.getLongitude(), hereBottomRight.getLatitude(), hereAddress.getStreet());	
 					Node wheelmapNode = WheelmapSearchService.getInstance().findWheelmapNode(hereAddress.getCity(), hereAddress.getStreet(), hereAddress.getHouseNumber(), wheelmapSearchResponse.getNodes());
+					String hereAddressText = hereAddress.getStreet() + " " + hereAddress.getHouseNumber() + ", " + hereAddress.getCity();
+					
 					
 					if(wheelmapNode != null) {
 						if("yes".equals(wheelmapNode.getWheelchair())) {
+							if(supportsApl) {
 							return handlerInput.getResponseBuilder()
-								.withSimpleCard("",(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("card.accessibilityhandler.accessibility.yes"), searchText, Optional.ofNullable(wheelmapNode.getName()).orElse(""))))
-				    	            .withSpeech(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("card.accessibilityhandler.accessibility.yes"), searchText, Optional.ofNullable(wheelmapNode.getName()).orElse("")))
+									.addDirective(createRenderDocumentDirectivy(handlerInput, hereAddressText, wheelmapNode))
+									.withSpeech(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("speech.accessibilityhandler.accessibility.yes"), hereAddressText, Optional.ofNullable(wheelmapNode.getName()).orElse("")))
 					                .build();
+							} else {
+								return handlerInput.getResponseBuilder()
+									.withSpeech(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("speech.accessibilityhandler.accessibility.yes"), hereAddressText, Optional.ofNullable(wheelmapNode.getName()).orElse("")))
+						            .build();
+							}
 						} else if("no".equals(wheelmapNode.getWheelchair())) {
-							return handlerInput.getResponseBuilder()
-									.withSimpleCard("",(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("card.accessibilityhandler.accessibility.no"), searchText, Optional.ofNullable(wheelmapNode.getName()).orElse(""))))
-				        	            .withSpeech(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("card.accessibilityhandler.accessibility.no"), searchText, Optional.ofNullable(wheelmapNode.getName()).orElse("")))
-				    	                .build();
+							if(supportsApl) {
+								return handlerInput.getResponseBuilder()
+										.addDirective(createRenderDocumentDirectivy(handlerInput, hereAddressText, wheelmapNode))
+										.withSpeech(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("speech.accessibilityhandler.accessibility.no"), hereAddressText, Optional.ofNullable(wheelmapNode.getName()).orElse("")))
+					    	                .build();
+							} else {
+								return handlerInput.getResponseBuilder()
+										.withSpeech(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("speech.accessibilityhandler.accessibility.no"), hereAddressText, Optional.ofNullable(wheelmapNode.getName()).orElse("")))
+										.build();
+							}
 						} else if("limited".equals(wheelmapNode.getWheelchair())) {
-							return handlerInput.getResponseBuilder()
-									.withSimpleCard("",(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("card.accessibilityhandler.accessibility.limited"), searchText, Optional.ofNullable(wheelmapNode.getName()).orElse(""))))
-				        	            .withSpeech(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("card.accessibilityhandler.accessibility.limited"), searchText, Optional.ofNullable(wheelmapNode.getName()).orElse("")))
-				    	                .build();
+							if(supportsApl) {
+								return handlerInput.getResponseBuilder()
+										.addDirective(createRenderDocumentDirectivy(handlerInput, hereAddressText, wheelmapNode))
+										.withSpeech(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("speech.accessibilityhandler.accessibility.limited"), hereAddressText, Optional.ofNullable(wheelmapNode.getName()).orElse("")))
+					    	                .build();
+							} else {
+								return handlerInput.getResponseBuilder()
+										.withSpeech(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("speech.accessibilityhandler.accessibility.limited"), hereAddressText, Optional.ofNullable(wheelmapNode.getName()).orElse("")))
+					    	                .build();
+							}
 						} else {
-							return handlerInput.getResponseBuilder()
-									.withSimpleCard("",(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("card.accessibilityhandler.accessibility.unknown"), searchText, Optional.ofNullable(wheelmapNode.getName()).orElse(""))))
-				        	            .withSpeech(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("card.accessibilityhandler.accessibility.unknown"), searchText, Optional.ofNullable(wheelmapNode.getName()).orElse("")))
-				    	                .build();
+							if(supportsApl) {
+								return handlerInput.getResponseBuilder()
+										.addDirective(createRenderDocumentDirectivy(handlerInput, hereAddressText, wheelmapNode))
+										.withSpeech(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("speech.accessibilityhandler.accessibility.unknown"), hereAddressText, Optional.ofNullable(wheelmapNode.getName()).orElse("")))
+					    	                .build();
+							} else {
+								return handlerInput.getResponseBuilder()
+										.withSpeech(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("speech.accessibilityhandler.accessibility.unknown"), hereAddressText, Optional.ofNullable(wheelmapNode.getName()).orElse("")))
+					    	                .build();
+							}
 						}
 						
 						
 					} else {
 						return handlerInput.getResponseBuilder()
-								.withSimpleCard("",(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("card.accessibilityhandler.nonode"), searchText)))
-				    	            .withSpeech(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("speech.accessibilityhandler.nonode"), searchText))
+								.withSpeech(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("speech.accessibilityhandler.nonode"), searchText))
 				                .build();
 					}
 				
 				} else {
 					return handlerInput.getResponseBuilder()
-				            .withSpeech("Nix Adresse")
+				            .withSpeech(String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("speech.error.address-not-found"), searchText))
 				            .build();
 				}
 			} catch (Exception exception) {
@@ -152,17 +184,33 @@ public class AccessibilityHandler implements IntentRequestHandler {
      * @param wheelmapNode
      * @return
      */
-    private RenderDocumentDirective createRenderDocumentDirectivy(String searchText, Node wheelmapNode) {
+    private RenderDocumentDirective createRenderDocumentDirectivy(HandlerInput handlerInput, String searchText, Node wheelmapNode) {
 		try {
 			ObjectMapper mapper = new ObjectMapper();
 
 			TypeReference<HashMap<String, Object>> deviceMapType = new TypeReference<HashMap<String, Object>>() {
 			};
 
-			Map<String, Object> document = mapper.readValue(new File("accessibilityIntentView.json"), deviceMapType);
+			Map<String, Object> document = mapper.readValue(new File("views/accessibilityIntentView.json"), deviceMapType);
 
-			JsonNode dataSources = mapper.readTree(new File("accessibilityIntentViewData.json"));
-			//ObjectNode deviceTemplateProperties = (ObjectNode) dataSources.get("accessibilityIntentView.Data").get("properties");
+			JsonNode dataSources = mapper.readTree(new File("views/accessibilityIntentViewData.json"));
+			ObjectNode deviceTemplateTitle = (ObjectNode) dataSources.get("bodyTemplate1Data");
+			deviceTemplateTitle.put("title", wheelmapNode.getName());
+			ObjectNode deviceTemplateText = (ObjectNode) dataSources.get("bodyTemplate1Data").get("textContent").get("primaryText");
+			
+			ObjectNode deviceTemplateBackgroundImage = (ObjectNode) dataSources.get("bodyTemplate1Data").get("backgroundImage").get("sources").get(0);
+			if("yes".equals(wheelmapNode.getWheelchair())) {
+				deviceTemplateText.put("text", String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("apl.accessibilityhandler.accessibility.yes"), searchText));
+				deviceTemplateBackgroundImage.put("url", "https://s3-eu-west-1.amazonaws.com/markthome-wheelmap/icon-wheelmap-green.png");
+			} else if("no".equals(wheelmapNode.getWheelchair())) {
+				deviceTemplateText.put("text", String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("apl.accessibilityhandler.accessibility.no"), searchText));
+				deviceTemplateBackgroundImage.put("url", "https://s3-eu-west-1.amazonaws.com/markthome-wheelmap/icon-wheelmap-red.png");
+			} else if("limited".equals(wheelmapNode.getWheelchair())) {
+				deviceTemplateText.put("text", String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("apl.accessibilityhandler.accessibility.limited"), searchText));
+				deviceTemplateBackgroundImage.put("url", "https://s3-eu-west-1.amazonaws.com/markthome-wheelmap/icon-wheelmap-orange.png");
+			} else {
+				deviceTemplateText.put("text", String.format(SkillUtils.getResourceBundle(handlerInput, "Messages").getString("apl.accessibilityhandler.accessibility.unknown"), searchText));
+			}
 
 			RenderDocumentDirective documentDirective = RenderDocumentDirective.builder().withDocument(document)
 					.withDatasources(mapper.convertValue(dataSources, new TypeReference<Map<String, Object>>() {

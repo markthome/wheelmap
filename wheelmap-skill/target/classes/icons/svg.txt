@@ -1,0 +1,10 @@
+https://mybyways.com/blog/convert-svg-to-png-using-your-browser
+
+orange
+<figure class="Icon__StyledIconContainer-cpej4-0 jvjirK"><svg viewBox="0 0 25 25" width="1em" height="1em" class="background" fill="#f39e3b"><path fill="#f39e3b" d="M6.743 2.364h11.55l5.776 10.003-5.775 10.003H6.743L.967 12.367z" fill-rule="evenodd"></path></svg><svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" class="icon"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="other" fill="#000000"><circle id="Oval-4" cx="7.5" cy="7.5" r="4.5"></circle></g></g></svg></figure>
+
+green
+<figure class="Icon__StyledIconContainer-cpej4-0 jvjirK"><svg viewBox="0 0 25 25" width="1em" height="1em" class="background" fill="#7ec512"><circle cx="12.5" cy="12.5" r="10.5" fill="#7ec512" fill-rule="nonzero"></circle></svg><svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" class="icon"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="other" fill="#000000"><circle id="Oval-4" cx="7.5" cy="7.5" r="4.5"></circle></g></g></svg></figure>
+
+red
+<figure class="Icon__StyledIconContainer-cpej4-0 jvjirK"><svg viewBox="0 0 25 25" width="1em" height="1em" class="background" fill="#f54b4b"><path d="M22 22V3.072H3v19z" fill="#f54b4b" fill-rule="nonzero"></path></svg><svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" class="icon"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="other" fill="#000000"><circle id="Oval-4" cx="7.5" cy="7.5" r="4.5"></circle></g></g></svg></figure>
